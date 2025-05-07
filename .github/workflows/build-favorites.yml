@@ -29,3 +29,4 @@ jobs:
           git add favorites.js
           git commit -m "Auto-update favorites.js"
           git push
+          
