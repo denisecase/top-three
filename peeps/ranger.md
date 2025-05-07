@@ -13,9 +13,9 @@ body {
 - ATV
 
 **Snacks**  
-- Beef jerky  
-- Trail mix  
 - Black coffee
+- BHK
+- Crazy pie
 
 **Activities**  
 - Clearing trails   
