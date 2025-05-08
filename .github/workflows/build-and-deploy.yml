@@ -48,6 +48,13 @@ jobs:
         ls -lh favorites.js
         ls -lh index.html
 
+    - name: Cache Bust for GitHub Pages
+      run: |
+        # Change the last modified timestamp to force a redeploy
+        touch index.html
+        touch views/*.html
+        touch favorites.js
+
     - name: Check for changes
       run: |
         if [ -z "$(git status --porcelain)" ]; then
@@ -68,3 +75,10 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./    # Deploy the root of main
+        user_name: github-actions[bot]
+        user_email: github-actions[bot]@users.noreply.github.com
+
+    - name: Log Deploy Confirmation
+      run: |
+        echo "✅ Deployment successful!"
+        echo "Check your site at: https://denisecase.github.io/top-three/"
