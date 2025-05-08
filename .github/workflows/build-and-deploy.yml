@@ -1,0 +1,70 @@
+name: Build and Deploy to GitHub Pages
+
+on:
+  push:
+    paths:
+      - 'peeps/*.md'
+      - 'peeps/*.css'
+  workflow_dispatch:    # Allows manual run
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        pip install markdown
+
+    - name: Pull latest changes from main
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git pull origin main --rebase
+
+    - name: Generate All Views (HTML files)
+      run: python .github/scripts/build_all_views.py
+
+    - name: Generate Favorites.js
+      run: python .github/scripts/build_favorites.py
+
+    - name: Generate Index
+      run: python .github/scripts/build_index.py
+
+    - name: Verify Outputs
+      run: |
+        ls -lh views/
+        ls -lh favorites.js
+        ls -lh index.html
+
+    - name: Check for changes
+      run: |
+        if [ -z "$(git status --porcelain)" ]; then
+          echo "🟢 No changes to commit. Exiting gracefully."
+          exit 0
+        fi
+
+    - name: Commit and push changes
+      run: |
+        git add views/*.html
+        git add favorites.js
+        git add index.html
+        git commit -m "Auto-update HTML pages, favorites, and index"
+        git push
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./    # Deploy the root of main
