@@ -1,10 +1,10 @@
 name: Build Favorites
 
 on:
-  push:
-    paths:
-      - 'peeps/*.md'
-      - '.github/workflows/build-favorites.yml'
+  workflow_run:
+    workflows: ["Build All HTML Pages"]
+    types:
+      - completed
 
 jobs:
   generate-favorites:

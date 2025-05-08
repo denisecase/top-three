@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'peeps/*.md'
+  workflow_dispatch:    # Allows manual run
 
 jobs:
   build-html:

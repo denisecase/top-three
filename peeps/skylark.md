@@ -13,9 +13,9 @@ body {
 - Exploring trails
 
 ## Books  
-- The Secret Garden  
-- Anne of Green Gables  
-- Pippi Longstocking
+- Inspirational  
+- Historical fiction 
+- Adventures
 
 ## Hobbies  
 - Drawing  

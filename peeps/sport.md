@@ -20,4 +20,4 @@ body {
 ## Things  
 - Trampoline 
 - Animals  
-- Books
+- Puzzles

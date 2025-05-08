@@ -14,8 +14,8 @@ body {
 
 ## Books  
 - Fantasy  
-- Visit the Olympics  
-- Run a marathon
+- Historical fiction  
+- Adventure stories
 
 ## Games  
 - Switch Just Dance  

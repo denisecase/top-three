@@ -8,9 +8,9 @@ body {
 # Willow's Top 3
 
 ## Books  
-- Where the wild things are
-- Good night, Moon
-- Are you my mother?
+- About animals
+- About adventure girls
+- Comic books
 
 ## Hobbies  
 - Playing dress-up

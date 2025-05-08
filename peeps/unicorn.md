@@ -18,6 +18,6 @@ body {
 - Working with pups
 
 ## Books  
-- Where the wild things are
-- Good night, Moon
-- Are you my mother?
+- About animals
+- About adventures
+- About princesses
