@@ -39,19 +39,14 @@ jobs:
     - name: Generate Favorites.js
       run: python .github/scripts/build_favorites.py
 
-    - name: Generate Index
-      run: python .github/scripts/build_index.py
-
     - name: Verify Outputs
       run: |
         ls -lh views/
         ls -lh favorites.js
-        ls -lh index.html
 
     - name: Cache Bust for GitHub Pages
       run: |
         # Change the last modified timestamp to force a redeploy
-        touch index.html
         touch views/*.html
         touch favorites.js
 
@@ -66,7 +61,6 @@ jobs:
       run: |
         git add views/*.html
         git add favorites.js
-        git add index.html
         git commit -m "Auto-update HTML pages, favorites, and index"
         git push
 

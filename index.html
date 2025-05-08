@@ -1,65 +1,107 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Top 3 project" />
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="./favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon-16x16.png">
-    <link rel="manifest" href="./favicon_io//site.webmanifest">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./favicon_io/site.webmanifest" />
     <title>Top 3</title>
     <link rel="stylesheet" href="index.css" />
 
-    <!-- Link each Peep's Styles -->
+    <!-- Link each Peep's Styles (Alphabetized) -->
+    <link rel="stylesheet" href="styles/blaze.css" />
+    <link rel="stylesheet" href="styles/coach.css" />
+    <link rel="stylesheet" href="styles/comet.css" />
+    <link rel="stylesheet" href="styles/duchess.css" />
+    <link rel="stylesheet" href="styles/dynamo.css" />
+    <link rel="stylesheet" href="styles/guardian.css" />
     <link rel="stylesheet" href="styles/kernel.css" />
-<link rel="stylesheet" href="styles/sport.css" />
-<link rel="stylesheet" href="styles/unicorn.css" />
-<link rel="stylesheet" href="styles/mario.css" />
-<link rel="stylesheet" href="styles/skylark.css" />
-<link rel="stylesheet" href="styles/guardian.css" />
-<link rel="stylesheet" href="styles/duchess.css" />
-<link rel="stylesheet" href="styles/blaze.css" />
-<link rel="stylesheet" href="styles/willow.css" />
-<link rel="stylesheet" href="styles/comet.css" />
-<link rel="stylesheet" href="styles/ranger.css" />
-<link rel="stylesheet" href="styles/dynamo.css" />
-<link rel="stylesheet" href="styles/coach.css" />
-<link rel="stylesheet" href="styles/rocket.css" />
-<link rel="stylesheet" href="styles/stella.css" />
+    <link rel="stylesheet" href="styles/mario.css" />
+    <link rel="stylesheet" href="styles/ranger.css" />
+    <link rel="stylesheet" href="styles/rocket.css" />
+    <link rel="stylesheet" href="styles/skylark.css" />
+    <link rel="stylesheet" href="styles/sport.css" />
+    <link rel="stylesheet" href="styles/stella.css" />
+    <link rel="stylesheet" href="styles/unicorn.css" />
+    <link rel="stylesheet" href="styles/willow.css" />
 
     <script src="favorites.js"></script>
     <script src="random-favorite.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
   </head>
 
   <body>
     <h1>Welcome to our Top Three</h1>
     <div id="random-favorite">Loading a random favorite...</div>
 
+    <!-- Refresh Button -->
+    <button
+      id="refresh-button"
+      onclick="refreshFavorite()"
+      title="Refresh Random Favorite"
+    >
+      🔄
+    </button>
+
     <div class="button-container">
+      <!-- Alphabetized Buttons -->
+      <a href="views/blaze.html" class="blaze-button">Blaze</a>
+      <a href="views/coach.html" class="coach-button">Coach</a>
+      <a href="views/comet.html" class="comet-button">Comet</a>
+      <a href="views/duchess.html" class="duchess-button">Duchess</a>
       <a href="views/dynamo.html" class="dynamo-button">Dynamo</a>
-<a href="views/guardian.html" class="guardian-button">Guardian</a>
-<a href="views/blaze.html" class="blaze-button">Blaze</a>
-<a href="views/comet.html" class="comet-button">Comet</a>
-<a href="views/rocket.html" class="rocket-button">Rocket</a>
-<a href="views/coach.html" class="coach-button">Coach</a>
-<a href="views/duchess.html" class="duchess-button">Duchess</a>
-<a href="views/mario.html" class="mario-button">Mario</a>
-<a href="views/kernel.html" class="kernel-button">Kernel</a>
-<a href="views/skylark.html" class="skylark-button">Skylark</a>
-<a href="views/ranger.html" class="ranger-button">Ranger</a>
-<a href="views/unicorn.html" class="unicorn-button">Unicorn</a>
-<a href="views/willow.html" class="willow-button">Willow</a>
-<a href="views/stella.html" class="stella-button">Stella</a>
-<a href="views/sport.html" class="sport-button">Sport</a>
+      <a href="views/guardian.html" class="guardian-button">Guardian</a>
+      <a href="views/kernel.html" class="kernel-button">Kernel</a>
+      <a href="views/mario.html" class="mario-button">Mario</a>
+      <a href="views/ranger.html" class="ranger-button">Ranger</a>
+      <a href="views/rocket.html" class="rocket-button">Rocket</a>
+      <a href="views/skylark.html" class="skylark-button">Skylark</a>
+      <a href="views/sport.html" class="sport-button">Sport</a>
+      <a href="views/stella.html" class="stella-button">Stella</a>
+      <a href="views/unicorn.html" class="unicorn-button">Unicorn</a>
+      <a href="views/willow.html" class="willow-button">Willow</a>
     </div>
 
     <!-- GitHub Icon for Easy Access -->
-    <a href="https://github.com/denisecase/top-three" target="_blank" class="github-link">
-      <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
-        alt="Edit on GitHub" class="github-icon" />
+    <a
+      href="https://github.com/denisecase/top-three"
+      target="_blank"
+      class="github-link"
+    >
+      <img
+        src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+        alt="Edit on GitHub"
+        class="github-icon"
+      />
     </a>
+
+    <script>
+      // Function to refresh the random favorite
+      function refreshFavorite() {
+        const randomElement = document.getElementById("random-favorite");
+        randomElement.innerText = "🔄 Loading a new favorite...";
+        setTimeout(() => {
+          window.location.reload(); // Refreshes the page to get a new favorite
+        }, 500);
+      }
+    </script>
   </body>
 </html>
