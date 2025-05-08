@@ -1,4 +1,4 @@
-name: Build Views
+name: 1: Build All Views
 
 on:
   push:

@@ -1,8 +1,8 @@
-name: Build Favorites
+name: 2: Build Favorites
 
 on:
   workflow_run:
-    workflows: ["Build Views"]
+    workflows: ["1: Build All Views"]
     types:
       - completed
   workflow_dispatch:    # Allows manual run
