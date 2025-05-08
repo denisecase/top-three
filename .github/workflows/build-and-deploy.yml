@@ -2,11 +2,8 @@ name: Build and Deploy to GitHub Pages
 
 on:
   push:
-    paths:
-      - 'peeps/*.md'
-      - 'peeps/*.css'
-      - 'index.html'
-      - 'favicon.ico'
+    branches:
+      - main
   workflow_dispatch:    # Allows manual run
 
 permissions:
@@ -35,34 +32,40 @@ jobs:
         git config user.email "github-actions[bot]@users.noreply.github.com"
         git pull origin main --rebase
 
+    # Check if .md or .css files have changed
+    - name: Check for changes in Peeps
+      id: filecheck
+      run: |
+        if git diff --name-only HEAD~1 | grep -E 'peeps/.*\.(md|css)'; then
+          echo "changes=true" >> $GITHUB_ENV
+        else
+          echo "changes=false" >> $GITHUB_ENV
+        fi
+
+    # Build if changes are found
     - name: Generate All Views (HTML files)
+      if: env.changes == 'true'
       run: python .github/scripts/build_all_views.py
 
     - name: Generate Favorites.js
+      if: env.changes == 'true'
       run: python .github/scripts/build_favorites.py
 
     - name: Verify Outputs
       run: |
+        echo "Checking Output Files..."
         ls -lh views/
         ls -lh favorites.js
 
-    - name: Cache Bust for GitHub Pages
-      run: |
-        # Change the last modified timestamp to force a redeploy
-        touch views/*.html
-        touch favorites.js
-        touch index.html
-        touch favicon.ico
-
     - name: Commit and push changes
       run: |
-        git add views/*.html
-        git add favorites.js
-        git add index.html
-        git add favicon.ico
-        git commit -m "Auto-update HTML pages, favorites, index, and favicon" || echo "No changes to commit."
-        git push || echo "No changes to push."
+        echo "Preparing to deploy..."
+        git add views/*.html || true
+        git add favorites.js || true
+        git commit -m "Auto-update HTML pages and favorites" || echo "Nothing to commit."
+        git push || echo "Nothing to push."
 
+    # Always deploy to GitHub Pages
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
@@ -73,5 +76,5 @@ jobs:
 
     - name: Log Deploy Confirmation
       run: |
-        echo "✅ Deployment successful!"
-        echo "Check your site at: https://denisecase.github.io/top-three/"
+        echo "Deployment successful!"
+        echo "Check site at: https://denisecase.github.io/top-three/"
