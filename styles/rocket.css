@@ -1,0 +1,13 @@
+.rocket-button {
+    background-color:rgb(110, 3, 153);
+    color: rgb(242, 245, 242);
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+.rocket-button:hover {
+    transform: scale(1.2);
+    background-color: #ff8577;
+}
