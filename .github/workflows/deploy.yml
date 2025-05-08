@@ -1,8 +1,8 @@
-name: 4: Deploy to GitHub Pages
+name: D Deploy to GitHub Pages
 
 on:
   workflow_run:
-    workflows: ["3: Build Index"]
+    workflows: ["C Build Index"]
     types:
       - completed
   workflow_dispatch:    # Allows manual run

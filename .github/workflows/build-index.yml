@@ -1,8 +1,8 @@
-name: 3: Build Index
+name: C Build Index
 
 on:
   workflow_run:
-    workflows: ["2: Build Favorites"]
+    workflows: ["B Build Favorites"]
     types:
       - completed
   workflow_dispatch:    # Allows manual run
