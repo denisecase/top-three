@@ -14,7 +14,7 @@ body {
 
 ## Hobbies  
 - Napping  
-- Managing  
+- Managing the dog
 - Hiding out
 
 ## Foods  

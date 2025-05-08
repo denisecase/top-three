@@ -20,17 +20,34 @@ I'll pull in your work to the main version and GitHub will regenerate the site w
 - JS - Used to modify the "home" page with instructions
 - Python - Used to automatically update our web set when we change a page.
 
-## Local Development 
+## OPTIONAL Local Development: One Time Start 
 
-You don't need this usually. These are just so I can test the Python instructions on my local machine. 
+Run these the first time you work with the project to create and manage your local Python virtual environment. 
 
-```shell
+```powershell
+git pull
 py -m venv .venv
 .\.venv\Scripts\activate
 py -m pip install --upgrade pip 
 py -m pip install --upgrade -r requirements.txt 
-py .github/scripts/build_favs.py
-py .github/scripts/build_pages.py
-py .github/scripts/build_index.py
+```
+## OPTIONAL Local Development
 
+Run these as needed when working on the Python code. 
+
+```powershell
+git pull
+.\.venv\Scripts\activate
+py -m pip install --upgrade -r requirements.txt 
+py .github/scripts/build_all_views.py
+py .github/scripts/build_favorites.py
+py .github/scripts/build_index.py
+```
+
+As needed after making changes
+
+```shell
+git add .
+git commit -m "describe changes here"
+git push -u origin main
 ```
