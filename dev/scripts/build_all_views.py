@@ -26,7 +26,7 @@ github_base_url = "https://github.com/denisecase/top-three/blob/main/peeps"
 for md_file in peeps_path.glob("*.md"):
     name = md_file.stem.capitalize()
     content = markdown.markdown(md_file.read_text())
-    
+
     # HTML Template
     full_html = f"""
     <!DOCTYPE html>
@@ -63,10 +63,19 @@ for md_file in peeps_path.glob("*.md"):
             class="edit-link">
             Edit {name}.md on GitHub
         </a>
+        <br>
+
+        <!-- Go back to home page button -->
+        <a 
+            href="../index.html" 
+            class="home-button">
+            &larr; Go back
+        </a>
+
     </body>
     </html>
     """
-    
+
     # Write to views folder
     output_file = views_path / f"{md_file.stem}.html"
     output_file.write_text(full_html)
