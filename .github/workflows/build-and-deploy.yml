@@ -5,6 +5,8 @@ on:
     paths:
       - 'peeps/*.md'
       - 'peeps/*.css'
+      - 'index.html'
+      - 'favicon.ico'
   workflow_dispatch:    # Allows manual run
 
 permissions:
@@ -49,20 +51,17 @@ jobs:
         # Change the last modified timestamp to force a redeploy
         touch views/*.html
         touch favorites.js
-
-    - name: Check for changes
-      run: |
-        if [ -z "$(git status --porcelain)" ]; then
-          echo "🟢 No changes to commit. Exiting gracefully."
-          exit 0
-        fi
+        touch index.html
+        touch favicon.ico
 
     - name: Commit and push changes
       run: |
         git add views/*.html
         git add favorites.js
-        git commit -m "Auto-update HTML pages, favorites, and index"
-        git push
+        git add index.html
+        git add favicon.ico
+        git commit -m "Auto-update HTML pages, favorites, index, and favicon" || echo "No changes to commit."
+        git push || echo "No changes to push."
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
