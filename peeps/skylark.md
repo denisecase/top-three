@@ -19,5 +19,6 @@ body {
 
 ## Hobbies  
 - Drawing  
-- Bird watching  
-- Writing short stories
+- Puzzles  
+- Going to Hawaii
+  
