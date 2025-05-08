@@ -32,7 +32,8 @@ for md_file in peeps_path.glob("*.md"):
     <!DOCTYPE html>
     <html lang="en">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>{name}'s Top Three</title>
         <link rel="stylesheet" href="../styles/{md_file.stem}.css">
         <style>
