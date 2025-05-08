@@ -13,9 +13,9 @@ body {
 - Party planning
 
 ## Treats  
-- Massage  
-- Getting together with friends  
 - Nice restaurants
+- Getting together with friends  
+- All-inclusive beach resorts
 
 ## Shows  
 - Scary movies
