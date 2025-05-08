@@ -5,6 +5,10 @@ on:
     workflows: ["Build Favorites"]
     types:
       - completed
+  workflow_dispatch:    # Allows manual run
+
+permissions:
+  contents: write
 
 jobs:
   build-index:

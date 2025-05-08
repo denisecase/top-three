@@ -5,6 +5,10 @@ on:
     workflows: ["Build All HTML Pages"]
     types:
       - completed
+  workflow_dispatch:    # Allows manual run
+
+permissions:
+  contents: write 
 
 jobs:
   generate-favorites:

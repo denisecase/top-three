@@ -13,7 +13,7 @@ body {
 
 ## Hobbies  
 - Mario Kart  
-- Super Smash Bros.  
+- Super Smash Bros
 - Lego master
 
 ## Foods  

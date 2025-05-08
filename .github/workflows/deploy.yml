@@ -5,6 +5,7 @@ on:
     workflows: ["Build Index"]
     types:
       - completed
+  workflow_dispatch:    # Allows manual run
 
 permissions:
   contents: write
