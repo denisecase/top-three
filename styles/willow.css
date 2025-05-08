@@ -1,0 +1,15 @@
+
+.willow-button {
+    background-color: rgb(154, 205, 50);
+    color: rgb(242, 245, 242);
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+.willow-button:hover {
+    background-color: rgb(173, 255, 47);
+    transform: rotate(3deg) scale(1.02);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}

@@ -7,17 +7,17 @@ body {
 
 # Comet's Top 3
 
-**Sniffs**  
+## Sniffs  
 - Pine trees  
 - Deer tracks  
 - Grandma's hoodie
 
-**Treats**  
+## Treats  
 - Liver  
 - Hot baloney 
 - Chicken
 
-**Activities**  
+## Activities  
 - Forest walks  
 - Rolling in stinky stuff 
 - Sleeping

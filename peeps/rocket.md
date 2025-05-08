@@ -7,17 +7,17 @@ body {
 
 # Rocket's Top 3
 
-**Books**  
+## Books  
 - The Martian 
 - Project Hail Mary 
 - Ender's Game
 
-**Foods**  
+## Foods  
 - Tequila Harry's / Tacos  
 - Dad's Chili
 - Ice cream
 
-**Hobbies**  
+## Hobbies  
 - Walking in the forest  
 - Writing code  
 - Adventures

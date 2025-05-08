@@ -7,17 +7,17 @@ body {
 
 # Ranger's Top 3
 
-**Tools**  
+## Tools  
 - Chainsaw  
 - Sledgehammer 
 - ATV
 
-**Snacks**  
+## Treats  
 - Black coffee
 - BHK
 - Crazy pie
 
-**Activities**  
+## Activities  
 - Clearing trails   
 - Spotting wildlife
 - Burning brush

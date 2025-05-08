@@ -19,8 +19,13 @@ jobs:
 
       - name: Run favorites script
         run: |
-          pip install -r requirements.txt || true  # no requirements yet
+          pip install markdown
           python .github/scripts/build_favorites.py
+
+      - name: Verify Output
+        run: |
+          ls -lh favorites.js
+          cat favorites.js
 
       - name: Commit and push updated favorites.js
         run: |
@@ -29,4 +34,3 @@ jobs:
           git add favorites.js
           git commit -m "Auto-update favorites.js"
           git push
-          

@@ -1,0 +1,35 @@
+name: Build Index
+
+on:
+  workflow_run:
+    workflows: ["Build Favorites"]
+    types:
+      - completed
+
+jobs:
+  build-index:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Run index generation script
+        run: python .github/scripts/build_index.py
+
+      - name: Verify Output
+        run: |
+          ls -lh index.html
+          cat index.html
+
+      - name: Commit and push updated index.html
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Auto-update index.html"
+          git push

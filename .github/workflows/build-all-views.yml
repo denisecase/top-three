@@ -1,4 +1,4 @@
-name: Build HTML Pages
+name: Build All HTML Pages
 
 on:
   push:
@@ -23,13 +23,12 @@ jobs:
         pip install markdown
 
     - name: Generate HTML from Markdown
-      run: python .github/scripts/build_pages.py
+      run: python .github/scripts/build_all_views.py
 
     - name: Commit and push changes
       run: |
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
-        git add peeps/*.html
+        git add views/*.html
         git commit -m "Auto-generate HTML pages from Markdown"
         git push
-        

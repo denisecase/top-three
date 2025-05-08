@@ -6,17 +6,17 @@ body {
 </style>
 # Mario's Top 3
 
-**Animals**  
+## Animals  
 - T-Rex
 - Shark
 - Tiger
 
-**Games**  
+## Hobbies  
 - Mario Kart  
 - Super Smash Bros.  
-- Minecraft
+- Lego master
 
-**Foods**  
+## Foods  
 - Pizza  
 - Tacos  
 - Chocolate chip cookies
