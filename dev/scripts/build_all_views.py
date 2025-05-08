@@ -1,5 +1,5 @@
 """
-.github/workflows/build_all_views.py
+dev/scripts/build_all_views.py
 This script generates the views - HTML pages for each Markdown file - in the peeps folder.
 """
 
@@ -9,10 +9,15 @@ from pathlib import Path
 # Import third-party libraries (see requirements.txt)
 import markdown
 
-# Paths
-peeps_path = Path("peeps")
-views_path = Path("views")
+# Paths (adjusted for the new location of the script)
+project_root = Path(__file__).resolve().parent.parent.parent  # Goes up two levels
+peeps_path = project_root / "peeps"
+views_path = project_root / "views"
 views_path.mkdir(exist_ok=True, parents=True)
+
+print(f"Root: {project_root}")
+print(f"Peeps: {peeps_path}")
+print(f"Views: {views_path}")
 
 # GitHub base URL
 github_base_url = "https://github.com/denisecase/top-three/blob/main/peeps"
@@ -64,4 +69,4 @@ for md_file in peeps_path.glob("*.md"):
     # Write to views folder
     output_file = views_path / f"{md_file.stem}.html"
     output_file.write_text(full_html)
-    print(f"✅ Generated {output_file.name}")
+    print(f"Generated {output_file.name}")

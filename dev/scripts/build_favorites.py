@@ -1,5 +1,5 @@
 """
-.github/workflows/build_favorites.py
+dev/scripts/build_favorites.py
 This script generates a data file, favorites.js, for the Top 3 project.
 """
 
@@ -8,8 +8,19 @@ import re
 from pathlib import Path
 import json
 
-# Define the path to the peeps folder
-peeps_path = Path("peeps")
+# Paths (adjusted for the new location of the script)
+project_root = Path(__file__).resolve().parent.parent.parent  # Goes up two levels
+peeps_path = project_root / "peeps"
+views_path = project_root / "views"
+output_file = project_root / "favorites.js"
+
+print(f"Root: {project_root}")
+print(f"Peeps: {peeps_path}")
+print(f"Views: {views_path}")
+print(f"Output file path: {output_file}")
+
+views_path.mkdir(exist_ok=True, parents=True)
+
 favorites_list = []
 
 # Collect all markdown files into a list (not just a generator)
@@ -56,9 +67,8 @@ for md_file in md_files:
 favorites_js = "const favorites = " + json.dumps(favorites_list, indent=2) + ";"
 
 # Write the output to favorites.js in the root folder
-output_file = Path("favorites.js")
 output_file.write_text(favorites_js)
 
 # Output the status to the console
 count_items: int = len(favorites_list)
-print(f"✅ Generated favorites.js with {count_items} items.")
+print(f"Generated favorites.js with {count_items} items.")
