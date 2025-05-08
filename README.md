@@ -2,6 +2,12 @@
 
 Learn to code by editing a web site. 
 
+[![Build All HTML Pages](https://github.com/denisecase/top-three/actions/workflows/build_all_views.yml/badge.svg)](https://github.com/denisecase/top-three/actions/workflows/build_all_views.yml)
+[![Build Favorites](https://github.com/denisecase/top-three/actions/workflows/build_favorites.yml/badge.svg)](https://github.com/denisecase/top-three/actions/workflows/build_favorites.yml)
+[![Build Index](https://github.com/denisecase/top-three/actions/workflows/build_index.yml/badge.svg)](https://github.com/denisecase/top-three/actions/workflows/build_index.yml)
+[![Deploy to GitHub Pages](https://github.com/denisecase/top-three/actions/workflows/deploy.yml/badge.svg)](https://github.com/denisecase/top-three/actions/workflows/deploy.yml)
+
+
 ## Steps
 
 1. Sign up for a GitHub account.
@@ -14,11 +20,21 @@ I'll pull in your work to the main version and GitHub will regenerate the site w
 
 # Languages
 
-- Markdown - favorite pages use Markdown, a super-simple way to make text look nice on the web.
-- CSS - Cascading style sheets are used to add colors and styles
-- HTML - Used to build the "home" page
-- JS - Used to modify the "home" page with instructions
-- Python - Used to automatically update our web set when we change a page.
+- **Markdown** - favorite pages use Markdown, a super-simple way to make text look nice on the web.
+- **CSS** - Cascading style sheets are used to add colors and styles
+- **HTML** - Used to build the "home" page
+- **JS** - Used to modify the "home" page with instructions
+- **Python** - Used to automatically update our web set when we change a page.
+- 
+## GitHub Actions
+
+| Workflow                 | Description                                       |
+|---------------------------|---------------------------------------------------|
+| **Build Views** | Converts Markdown to HTML and places them in `/views/`. |
+| **Build Favorites**     | Generates `favorites.js` from all markdown files. |
+| **Build Index**         | Creates `index.html` with links to all pages.     |
+| **Deploy to GitHub Pages** | Deploys the generated files to GitHub Pages website. |
+
 
 ## OPTIONAL Local Development: One Time Start 
 
