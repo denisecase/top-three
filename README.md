@@ -2,10 +2,8 @@
 
 Learn to code by editing a web site. 
 
-[![Build All HTML Pages](https://github.com/denisecase/top-three/actions/workflows/build_all_views.yml/badge.svg)](https://github.com/denisecase/top-three/actions/workflows/build_all_views.yml)
-[![Build Favorites](https://github.com/denisecase/top-three/actions/workflows/build_favorites.yml/badge.svg)](https://github.com/denisecase/top-three/actions/workflows/build_favorites.yml)
-[![Build Index](https://github.com/denisecase/top-three/actions/workflows/build_index.yml/badge.svg)](https://github.com/denisecase/top-three/actions/workflows/build_index.yml)
-[![Deploy to GitHub Pages](https://github.com/denisecase/top-three/actions/workflows/deploy.yml/badge.svg)](https://github.com/denisecase/top-three/actions/workflows/deploy.yml)
+[![Build And Deploy](https://github.com/denisecase/top-three/actions/workflows/build-and-deploy.yml/badge.svg)](https://github.com/denisecase/top-three/actions/workflows/build-and-deploy.yml)
+
 
 
 ## Steps
