@@ -16,9 +16,9 @@ html_template = """
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Top 3</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Top 3 project" />
+    <title>Top 3</title>
     <link rel="stylesheet" href="index.css" />
 
     <!-- Link each Peep's Styles -->
