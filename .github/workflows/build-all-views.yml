@@ -1,4 +1,4 @@
-name: Build All HTML Pages
+name: Build Views
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
   workflow_dispatch:    # Allows manual run
 
 permissions:
-  contents: write 
+  contents: write    
 
 jobs:
   build-html:
@@ -29,10 +29,21 @@ jobs:
     - name: Generate HTML from Markdown
       run: python .github/scripts/build_all_views.py
 
-    - name: Commit and push changes
+    - name: Pull latest changes from main
       run: |
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
+        git pull origin main --rebase
+
+    - name: Check for changes
+      run: |
+        if [ -z "$(git status --porcelain)" ]; then
+          echo "🟢 No changes to commit."
+          exit 0
+        fi
+
+    - name: Commit and push changes
+      run: |
         git add views/*.html
         git commit -m "Auto-generate HTML pages from Markdown"
         git push

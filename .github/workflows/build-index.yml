@@ -30,10 +30,21 @@ jobs:
           ls -lh index.html
           cat index.html
 
-      - name: Commit and push updated index.html
+      - name: Pull latest changes from main
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull origin main --rebase
+
+      - name: Check for changes
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "🟢 No changes to commit. Exiting gracefully."
+            exit 0
+          fi
+
+      - name: Commit and push updated index.html
+        run: |
           git add index.html
           git commit -m "Auto-update index.html"
           git push

@@ -2,7 +2,7 @@ name: Build Favorites
 
 on:
   workflow_run:
-    workflows: ["Build All HTML Pages"]
+    workflows: ["Build Views"]
     types:
       - completed
   workflow_dispatch:    # Allows manual run
@@ -31,10 +31,21 @@ jobs:
           ls -lh favorites.js
           cat favorites.js
 
-      - name: Commit and push updated favorites.js
+      - name: Pull latest changes from main
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull origin main --rebase
+
+      - name: Check for changes
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "🟢 No changes to commit. Exiting gracefully."
+            exit 0
+          fi
+
+      - name: Commit and push updated favorites.js
+        run: |
           git add favorites.js
           git commit -m "Auto-update favorites.js"
           git push
