@@ -9,10 +9,17 @@ const mdFile = `../peeps/${page}.md`;
 // Set the page title dynamically
 document.getElementById('page-title').innerText = `${page.charAt(0).toUpperCase() + page.slice(1)}'s Top 3`;
 
-// Build the GitHub Edit link
-const githubLink = `https://github.com/denisecase/top-three/blob/main/peeps/${page}.md`;
-document.getElementById('edit-link').href = githubLink;
-document.getElementById('edit-link').innerText = `Edit ${page.charAt(0).toUpperCase() + page.slice(1)}.md on GitHub`;
+// Fill the GitHub Edit links dynamically
+document.getElementById('edit-md-link').href = `https://github.com/denisecase/top-three/blob/main/peeps/${page}.md`;
+document.getElementById('edit-css-link').href = `https://github.com/denisecase/top-three/blob/main/styles/peep_page/${page}.css`;
+document.getElementById('edit-home-button-css-link').href = `https://github.com/denisecase/top-three/blob/main/styles/home_button/${page}.css`;
+
+// Load Peep's CSS Dynamically
+const peepCSSPath = `../styles/peep_page/${page}.css`;
+const linkTag = document.createElement('link');
+linkTag.rel = 'stylesheet';
+linkTag.href = peepCSSPath;
+document.head.appendChild(linkTag);
 
 // Load Markdown content
 fetch(mdFile)
@@ -23,19 +30,3 @@ fetch(mdFile)
     .catch(() => {
         document.getElementById('content').innerHTML = `<p>Could not load content for ${page}.md</p>`;
     });
-
-// Load the custom "Go Home" button style
-const cssPath = `../styles/peep_page/${page}.css`;
-fetch(cssPath).then(res => {
-  if (res.ok) {
-    console.log(`Go Home Button CSS found for ${page}`);
-    const linkTag = document.createElement('link');
-    linkTag.rel = 'stylesheet';
-    linkTag.href = cssPath;
-    document.head.appendChild(linkTag);
-  } else {
-    console.log(`Go Home Button CSS not found for ${page}`);
-  }
-}).catch(err => {
-  console.error(`Error loading CSS for ${page}:`, err);
-});
