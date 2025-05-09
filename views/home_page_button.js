@@ -18,9 +18,19 @@ async function loadPeepButtons() {
     return;
   } else {
     console.log("Button container found.");
-  }
-  // Fetch the list of Markdown files from your GitHub Pages directory
+  }  
+  
+  console.log(`Fetching list of Markdown files from: ${ROOT}/peeps/`);
   const response = await fetch(`${ROOT}/peeps/`);
+  try {
+    response = await fetch(`${ROOT}/peeps/`);
+    if (!response.ok) {
+      console.error(`Failed to fetch the directory. Status: ${response.status}`);
+      return;
+    } else {
+      console.log(`Directory fetched successfully. Status: ${response.status}`);
+    }
+
   const text = await response.text();
 
   // Use regex to find all .md filenames
