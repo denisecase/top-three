@@ -3,8 +3,22 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../styles/main.css">
     <title>Top 3 Home</title>
+
+    <script>
+      // Check if we are on GitHub Pages
+      const isGithubPages = window.location.hostname === "denisecase.github.io";
+      window.ROOT = isGithubPages ? "/top-three" : "";
+    </script>
+
+    <!-- Dynamically load the CSS with the correct ROOT -->
+    <link rel="stylesheet" id="default-styles" />
+    <script>
+      // Set the href dynamically based on the environment
+      document.getElementById(
+        "default-styles"
+      ).href = `${window.ROOT}/styles/index.css`;
+    </script>
   </head>
   <body>
     <h1>Welcome to Our Top Three</h1>
@@ -39,7 +53,11 @@
       />
     </a>
 
-    <!-- Script to load buttons -->
-    <script src="home_page_button.js" defer></script>
+<!-- Script to load buttons dynamically with ROOT -->
+<script>
+  const buttonScript = document.createElement('script');
+  buttonScript.src = `${window.ROOT}/views/home_page_button.js`;
+  document.body.appendChild(buttonScript);
+</script>
   </body>
 </html>

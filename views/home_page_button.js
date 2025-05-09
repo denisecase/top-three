@@ -4,11 +4,15 @@
  * Links each button to the correct template page and applies custom CSS if it exists.
  */
 
+//  the root path dynamically
+const isGithubPages = window.location.hostname === "denisecase.github.io";
+const ROOT = isGithubPages ? "/top-three" : "";
+
 async function loadPeepButtons() {
   const container = document.getElementById('button-container');
 
   // Fetch the list of Markdown files from your GitHub Pages directory
-  const response = await fetch('../peeps/');
+  const response = await fetch(`${ROOT}/peeps/`);
   const text = await response.text();
 
   // Use regex to find all .md filenames
@@ -38,7 +42,7 @@ async function loadPeepButtons() {
     container.appendChild(button);
 
     // Load the Home Button CSS from /styles/home_button/
-    const cssPath = `../styles/home_button/${peep}.css`;
+    const cssPath = `${ROOT}/styles/home_button/${peep}.css`;
     fetch(cssPath).then(res => {
       if (res.ok) {
         console.log(`Home Button CSS found for ${peep}`);
