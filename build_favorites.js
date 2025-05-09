@@ -1,5 +1,5 @@
 /**
- * buildFavorites.js
+ * build_favorites.js
  * Dynamically generates the favorites array from Markdown files.
  */
 const peeps = [
@@ -10,9 +10,9 @@ const peeps = [
   
   const favorites = [];
   
-  async function buildFavorites() {
+  async function build_favorites() {
     for (const peep of peeps) {
-      const response = await fetch(`./peeps/${peep}.md`);
+      const response = await fetch(`peeps/${peep}.md`);
       if (response.ok) {
         const markdown = await response.text();
   
@@ -46,5 +46,5 @@ const peeps = [
     }
   }
   
-  buildFavorites();
+  build_favorites();
   
