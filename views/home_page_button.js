@@ -7,10 +7,18 @@
 //  the root path dynamically
 const isGithubPages = window.location.hostname === "denisecase.github.io";
 const ROOT = isGithubPages ? "/top-three" : "";
+console.log(`🌐 Environment Detected: ${isGithubPages ? "GitHub Pages" : "Localhost"}`);
+console.log(`🌐 Root Path Set To: ${ROOT}`);
 
 async function loadPeepButtons() {
+  console.log("Starting to load peep buttons...");
   const container = document.getElementById('button-container');
-
+  if (!container) {
+    console.error("Button container not found!");
+    return;
+  } else {
+    console.log("Button container found.");
+  }
   // Fetch the list of Markdown files from your GitHub Pages directory
   const response = await fetch(`${ROOT}/peeps/`);
   const text = await response.text();

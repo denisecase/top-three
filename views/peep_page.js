@@ -4,6 +4,7 @@
  */
 
 // Detect environment
+//const isGithubPages = window.location.hostname === "denisecase.github.io";
 const isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
 const ROOT = isGithubPages ? "/top-three" : "..";
 
