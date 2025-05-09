@@ -1,0 +1,13 @@
+README.md
+dev/
+favicon.ico
+favicon_io/
+favorites.js
+index.css
+index.html
+list.txt
+peeps/
+random-favorite.js
+requirements.txt
+styles/
+views/

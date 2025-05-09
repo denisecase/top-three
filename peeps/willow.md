@@ -1,10 +1,3 @@
-<style>
-body {
-    background-color:pink;
-    color: rgb(4, 131, 250);
-}
-</style>
-
 # Willow's Top 3
 
 ## Books  

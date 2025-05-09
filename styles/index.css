@@ -1,0 +1,90 @@
+/* 
+styles/index.css
+Global Body Styles for Home Page 
+*/
+
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #f9f9f9;
+  padding: 2rem;
+}
+
+/* Button Container */
+.button-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* Buttons inside the container */
+.button-container a {
+  text-decoration: none;
+  display: inline-block;
+  max-width: 200px; /* Limit width on desktop */
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+/* Random Favorite Display */
+#random-favorite {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+/* GitHub Icon */
+.github-link {
+  margin-top: 3rem;
+  display: inline-block;
+}
+
+.github-icon {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.github-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Refresh Button */
+#refresh-button {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    background-color: #499bdf;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#refresh-button:hover {
+    background-color: #45a049;
+    transform: rotate(360deg);
+}
+
+/* Home Button Shared Styles */
+.home-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  margin: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+@media (min-width: 600px) {
+  .button-container a {
+    width: auto; /* Adjust to content size on larger screens */
+  }
+}

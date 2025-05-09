@@ -1,10 +1,3 @@
-<style>
-body {
-    background-color: pink;
-    color: rgb(166, 61, 252);
-}
-</style>
-
 # Unicorn's Top 3
 
 ## Things  

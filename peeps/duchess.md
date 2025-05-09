@@ -1,10 +1,3 @@
-<style>
-body {
-    background-color: #f0e68c;
-    color: #333;
-}
-</style>
-
 # Duchess' Top 3
 
 ## Locations 

@@ -1,10 +1,3 @@
-<style>
-body {
-    background-color: #ffebcd;
-    color: #333;
-}
-</style>
-
 # Blaze's Top 3
 
 ## Adventures 

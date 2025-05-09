@@ -1,10 +1,3 @@
-<style>
-body {
-    background-color:rgb(248, 211, 88);
-    color: rgb(1, 7, 1);
-}
-</style>
-
 # Comet's Top 3
 
 ## Sniffs  

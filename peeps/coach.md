@@ -1,10 +1,3 @@
-<style>
-body {
-    background-color: #fafad2;
-    color: #333;
-}
-</style>
-
 # Coach's Top 3
 
 ## Books  

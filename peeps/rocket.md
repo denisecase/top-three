@@ -1,10 +1,3 @@
-<style>
-body {
-    background-color:rgb(110, 3, 153);
-    color: rgb(242, 245, 242);
-}
-</style>
-
 # Rocket's Top 3
 
 ## Books  

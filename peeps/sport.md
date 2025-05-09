@@ -1,10 +1,3 @@
-<style>
-body {
-    background-color: #e0ffff;
-    color: #333;
-}
-</style>
-
 # Sport's Top 3
 
 ## Activities  

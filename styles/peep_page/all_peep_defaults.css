@@ -1,0 +1,39 @@
+/* 
+styles/peep_page/all_peep_defaults.css
+Global Body Styles for Peep Pages 
+*/
+body {
+    font-family: sans-serif;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  /* Markdown Content on Peep Pages */
+.peep-content {
+    text-align: left;
+    margin: 0 auto;
+    line-height: 1.6;
+    padding: 1rem;
+  }
+  
+
+  /* Card Structure (Shared across all Peep pages) */
+#card-container {
+    padding: 1.5rem;
+    margin: 2rem auto;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+  /* Go Home Button Defaults */
+.home-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    margin: 10px auto;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+  }

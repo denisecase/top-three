@@ -1,10 +1,3 @@
-<style>
-body {
-    background-color:rgb(247, 75, 83);
-    color: white;
-}
-</style>
-
 # Guardian's Top 3
 
 ## Sports  

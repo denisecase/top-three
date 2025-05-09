@@ -1,10 +1,3 @@
-<style>
-body {
-    background-color: #f0fff0;
-    color: #333;
-}
-</style>
-
 # Dynamo's Top 3
 
 ## Hobbies  

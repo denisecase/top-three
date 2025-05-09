@@ -1,0 +1,14 @@
+.comet-button {
+    background-color:rgb(248, 211, 88);
+    color: rgb(1, 7, 1);
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+.comet-button:hover {
+    transform: scale(1.2) rotate(-2deg);
+    background-color: #26d7e9;
+}
+

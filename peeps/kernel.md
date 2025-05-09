@@ -1,10 +1,3 @@
-<style>
-body {
-    background-color: #f0f8ff;
-    color: #333;
-}
-</style>
-
 # Kernel's Top 3
 
 ## Tech  
