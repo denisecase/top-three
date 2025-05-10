@@ -60,5 +60,5 @@ document.getElementById('page-title').innerText = `${page.charAt(0).toUpperCase(
 
 // Set GitHub Edit Links
 document.getElementById('edit-md-link').href = `https://github.com/denisecase/top-three/blob/main/peeps/${page}.md`;
-document.getElementById('edit-css-link').href = `https://github.com/denisecase/top-three/blob/main/styles/peep_page/${page}.css`;
-document.getElementById('edit-home-button-css-link').href = `https://github.com/denisecase/top-three/blob/main/styles/home_button/${page}.css`;
+document.getElementById('edit-css-link').href = `https://github.dev/denisecase/top-three/edit/main/styles/peep_page/${page}.css`;
+document.getElementById('edit-home-button-css-link').href = `https://github.dev/denisecase/top-three/edit/main/styles/home_button/${page}.css`;
